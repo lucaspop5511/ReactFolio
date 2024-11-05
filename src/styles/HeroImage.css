@@ -1,0 +1,26 @@
+/* src/styles/HeroImage.css */
+.hero-image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.p5-sketch {
+    display: flex;
+    /* Use flex to center */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    width: 100%;
+    /* Make sure it takes full width */
+}
+
+.p5-sketch canvas {
+    display: block;
+    /* Prevent inline-block margin issues */
+    margin: auto;
+    /* Center the canvas */
+}

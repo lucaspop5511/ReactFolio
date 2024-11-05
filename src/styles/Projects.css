@@ -1,0 +1,36 @@
+/* src/styles/Projects.css */
+.project {
+    position: relative;
+    margin: 1rem 0;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.project:hover {
+    background-color: #e4e5df;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.tag {
+    background-color: #e0f7fa;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.project-preview {
+    position: fixed;
+    width: 160px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 10;
+}
