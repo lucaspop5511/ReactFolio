@@ -19,6 +19,12 @@ function Projects() {
             description: 'Description for past project 1.',
             image: 'https://via.placeholder.com/150',
         },
+        {
+            title: 'Past Project 2',
+            tags: ['HTML', 'CSS', 'p5.js'],
+            description: 'Description for past project 1.',
+            image: 'https://via.placeholder.com/150',
+        },
     ];
 
     const handleMouseEnter = (project, event) => {
@@ -35,7 +41,7 @@ function Projects() {
     };
 
     return (
-        <section style={{ textAlign: 'left', marginBottom: '2rem' }}>
+        <section style={{ textAlign: 'left', marginBottom: '1rem' }}>
             <h2>Projects</h2>
             {projects.map((project, index) => (
                 <div

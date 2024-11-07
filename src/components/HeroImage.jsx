@@ -44,7 +44,7 @@ function HeroImage() {
             };
 
             p.draw = () => {
-                p.background(255);
+                p.background(61, 62, 63);
 
                 for (const cube of cubes) {
                     cube.draw();

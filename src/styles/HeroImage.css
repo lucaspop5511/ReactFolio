@@ -9,18 +9,13 @@
 
 .p5-sketch {
     display: flex;
-    /* Use flex to center */
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically */
     width: 100%;
-    /* Make sure it takes full width */
+    overflow-x: hidden;
 }
 
 .p5-sketch canvas {
     display: block;
-    /* Prevent inline-block margin issues */
     margin: auto;
-    /* Center the canvas */
 }

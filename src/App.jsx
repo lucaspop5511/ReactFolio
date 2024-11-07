@@ -10,8 +10,8 @@ import './styles/main.css';
 function App() {
   return (
     <div class='app'>
-      <HeroImage />
       <Hero />
+      <HeroImage />
       <About />
       <Projects />
       <Contact />
