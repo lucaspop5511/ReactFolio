@@ -44,7 +44,7 @@ function HeroImage() {
             };
 
             p.draw = () => {
-                p.background(61, 62, 63);
+                p.background(206, 214, 217);
 
                 for (const cube of cubes) {
                     cube.draw();
@@ -101,9 +101,9 @@ function HeroImage() {
                     this.c = c;
                     this.r = r;
                     this.z = z;
-                    this.red = p.random(255);
-                    this.green = p.random(255);
-                    this.blue = p.random(255);
+                    this.red = p.random(15, 25);
+                    this.green = p.random(55, 255);
+                    this.blue = p.random(55, 255);
                 }
 
                 draw() {
@@ -144,7 +144,9 @@ function HeroImage() {
         };
     }, []);
 
-    return <div ref={sketchRef} className="p5-sketch"></div>;
+    return <div ref={sketchRef} className="p5-sketch">
+        <div className="hover-text"><b>Made with p5.js</b> - click to regenerate</div>
+    </div>;
 }
 
 export default HeroImage;
