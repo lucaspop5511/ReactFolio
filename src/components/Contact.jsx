@@ -5,6 +5,7 @@ import '/src/styles/Contact.css';
 function Contact() {
     return (
         <section class='contact-container'>
+            <hr className="separator"></hr>
             <h2>Contact</h2>
             <p>Email: <span onClick={() => navigator.clipboard.writeText('your.email@example.com')}>Copy Me</span></p>
             <div>

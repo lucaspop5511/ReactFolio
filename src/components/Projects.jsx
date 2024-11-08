@@ -42,6 +42,7 @@ function Projects() {
 
     return (
         <section style={{ textAlign: 'left', marginBottom: '1rem' }}>
+            <hr className="separator"></hr>
             <h2>Projects</h2>
             {projects.map((project, index) => (
                 <div
