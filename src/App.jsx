@@ -10,9 +10,11 @@ import './styles/main.css';
 function App() {
   return (
     <div class='app'>
-      <Hero />
-      <HeroImage />
-      <About />
+      <div className='main'>
+        <Hero />
+        <HeroImage />
+        <About />
+      </div>
       <Projects />
       <Contact />
     </div>

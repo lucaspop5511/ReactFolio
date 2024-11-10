@@ -29,6 +29,23 @@ function HeroImage() {
                 cubes.sort((a, b) => {
                     return a.getSortString().localeCompare(b.getSortString());
                 });
+
+                centerShape();
+            }
+
+            function centerShape() {
+                // Calculate boundary limits of the cubes
+                const minX = Math.min(...cubes.map(cube => cube.getProjectedX()));
+                const maxX = Math.max(...cubes.map(cube => cube.getProjectedX()));
+                const minY = Math.min(...cubes.map(cube => cube.getProjectedY()));
+                const maxY = Math.max(...cubes.map(cube => cube.getProjectedY()));
+
+                // Calculate offset to center the shape
+                const offsetX = gridTopX - (minX + maxX) / 2;
+                const offsetY = gridTopY - (minY + maxY) / 2;
+
+                // Apply offset to each cube's projected position
+                cubes.forEach(cube => cube.applyOffset(offsetX, offsetY));
             }
 
             p.setup = () => {
@@ -104,11 +121,26 @@ function HeroImage() {
                     this.red = p.random(15, 25);
                     this.green = p.random(55, 255);
                     this.blue = p.random(55, 255);
+                    this.offsetX = 0;
+                    this.offsetY = 0;
+                }
+
+                getProjectedX() {
+                    return gridTopX + (this.c - this.r) * sideLength * Math.sqrt(3) / 2 + this.offsetX;
+                }
+
+                getProjectedY() {
+                    return gridTopY + (this.c + this.r) * sideLength / 2 - sideLength * this.z + this.offsetY;
+                }
+
+                applyOffset(x, y) {
+                    this.offsetX += x;
+                    this.offsetY += y;
                 }
 
                 draw() {
-                    const x = gridTopX + (this.c - this.r) * sideLength * Math.sqrt(3) / 2;
-                    const y = gridTopY + (this.c + this.r) * sideLength / 2 - sideLength * this.z;
+                    const x = this.getProjectedX();
+                    const y = this.getProjectedY();
 
                     const points = [];
                     for (let angle = p.PI / 6; angle < p.PI * 2; angle += p.PI / 3) {

@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 import React, { useState } from 'react';
 import '/src/styles/Projects.css';
 
@@ -8,22 +7,39 @@ function Projects() {
 
     const projects = [
         {
-            title: 'Ongoing Project',
-            tags: ['React', 'JavaScript'],
+            title: 'Eco Engineering Group',
+            date: 'Work in progress',
+            tags: ['HTML', 'CSS'],
             description: 'This is a description for the ongoing project.',
-            image: 'https://via.placeholder.com/150',
+            video: 'public/VideoPreviews/EEG.mov',
         },
         {
-            title: 'Past Project 1',
-            tags: ['HTML', 'CSS', 'p5.js'],
+            title: 'Honey Tunes',
+            date: 'July 2024',
+            tags: ['HTML', 'CSS', 'Javascript'],
             description: 'Description for past project 1.',
-            image: 'https://via.placeholder.com/150',
+            video: 'public/VideoPreviews/HoneyTunes.mov',
         },
         {
-            title: 'Past Project 2',
-            tags: ['HTML', 'CSS', 'p5.js'],
-            description: 'Description for past project 1.',
-            image: 'https://via.placeholder.com/150',
+            title: 'My older Portfolio Page',
+            date: 'May 2024',
+            tags: ['HTML', 'CSS', 'Javascript','p5.js'],
+            description: 'Description for past project 2.',
+            video: 'public/VideoPreviews/OldWebsite.mov',
+        },
+        {
+            title: 'Task Manager',
+            date: 'May 2024',
+            tags: ['HTML', 'CSS', 'Javascript'],
+            description: 'Description for past project 3.',
+            video: 'public/VideoPreviews/TaskManager.mov',
+        },
+        {
+            title: 'Responsive Digital Clock',
+            date: 'April 2024',
+            tags: ['HTML', 'CSS', 'Javascript'],
+            description: 'Description for past project 4.',
+            video: 'public/VideoPreviews/DigitalClock.mov',
         },
     ];
 
@@ -41,8 +57,8 @@ function Projects() {
     };
 
     return (
-        <section style={{ textAlign: 'left', marginBottom: '1rem' }}>
-            <hr className="separator"></hr>
+        <section className='projects-container' style={{ textAlign: 'left', marginBottom: '1rem' }}>
+            <hr className="separator" id='top'></hr>
             <h2>Projects</h2>
             {projects.map((project, index) => (
                 <div
@@ -51,8 +67,8 @@ function Projects() {
                     onMouseEnter={(event) => handleMouseEnter(project, event)}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                >
-                    <h3>{project.title}</h3>
+                    >
+                    <h3>{project.title} | <i>{project.date}</i></h3>
                     <p>{project.description}</p>
                     <div className="tags">
                         {project.tags.map((tag, i) => (
@@ -69,10 +85,21 @@ function Projects() {
                     style={{
                         top: mousePosition.y + 20,
                         left: mousePosition.x + 20,
-                        backgroundImage: `url(${hoveredProject.image})`,
                     }}
-                />
+                >
+                    <video
+                        src={hoveredProject.video}
+                        width="2980"
+                        height="1844"
+                        loop
+                        autoPlay
+                        muted
+                        style={{ objectFit: 'cover', borderRadius: '8px' }}
+                        playbackRate={4}
+                    />
+                </div>
             )}
+            <hr className="separator" id="bot"></hr>
         </section>
     );
 }

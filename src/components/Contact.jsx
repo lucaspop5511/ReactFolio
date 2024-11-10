@@ -1,17 +1,59 @@
-// src/components/Contact.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import '/src/styles/Contact.css';
 
 function Contact() {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText('lucaspop5511@gmail.com');
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    };
+
     return (
-        <section class='contact-container'>
-            <hr className="separator"></hr>
+        <section className="contact-container">
             <h2>Contact</h2>
-            <p>Email: <span onClick={() => navigator.clipboard.writeText('your.email@example.com')}>Copy Me</span></p>
-            <div>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
+
+            <div className="email-section">
+            <span className="email">lucaspop5511@gmail.com</span>
+                <button className="copy-button" onClick={handleCopyEmail}>
+                {copied ? (
+                    <>
+                        <i className="fa-solid fa-clipboard-check"></i> Copied!
+                    </>
+                    ) : (
+                    <>
+                        <i className="fa-solid fa-clipboard"></i> Copy Me
+                    </>
+                )}
+                </button>
+            </div>
+
+
+            <div className="contact-links">
+                <a href="https://www.linkedin.com/in/pop-lucas-lp51/" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   <i className="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+
+                <a href="https://github.com/lucaspop5511" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   <i className="fa-brands fa-github"></i> GitHub
+                </a>
+
+                <a href="https://t.me/your_telegram_username" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   <i className="fa-brands fa-telegram"></i> Telegram
+                </a>
+
+                <a href="public/PopLucas_CV.pdf" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   <i className="fa-solid fa-file-lines"></i> View Resume
+                </a>
             </div>
         </section>
     );
