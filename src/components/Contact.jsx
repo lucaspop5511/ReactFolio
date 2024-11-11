@@ -13,9 +13,10 @@ function Contact() {
     return (
         <section className="contact-container">
             <h2>Contact</h2>
+            <p>Feel free to reach me via email</p>
 
             <div className="email-section">
-            <span className="email">lucaspop5511@gmail.com</span>
+                <span className="email">lucaspop5511@gmail.com</span>
                 <button className="copy-button" onClick={handleCopyEmail}>
                 {copied ? (
                     <>
@@ -28,7 +29,6 @@ function Contact() {
                 )} 
                 </button>
             </div>
-
 
             <div className="contact-links">
                 <a href="https://www.linkedin.com/in/pop-lucas-lp51/" 

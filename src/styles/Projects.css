@@ -79,8 +79,9 @@
 /* Project Preview */
 .project-preview {
     position: fixed;
-    width: 298px;
-    height: 184px;
+    width: clamp(298px, 30vw, 500px);
+    height: auto;
+    aspect-ratio: 298 / 184;
     border: 2px solid #292929;
     border-radius: 10px;
     pointer-events: none;
