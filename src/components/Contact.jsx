@@ -25,7 +25,7 @@ function Contact() {
                     <>
                         <i className="fa-solid fa-clipboard"></i> Copy Me
                     </>
-                )}
+                )} 
                 </button>
             </div>
 
