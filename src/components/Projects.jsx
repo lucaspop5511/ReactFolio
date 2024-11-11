@@ -12,7 +12,7 @@ function Projects() {
             tags: ['HTML', 'CSS'],
             description: 'This is a description for the ongoing project.',
             video: 'public/VideoPreviews/EEG.mov',
-        },
+        },  
         {
             title: 'Honey Tunes',
             date: 'July 2024',
