@@ -43,7 +43,7 @@ function Contact() {
                    <i className="fa-brands fa-github"></i> GitHub
                 </a>
 
-                <a href="https://t.me/your_telegram_username" 
+                <a href="https://t.me/lukibuki" 
                    target="_blank" 
                    rel="noopener noreferrer">
                    <i className="fa-brands fa-telegram"></i> Telegram

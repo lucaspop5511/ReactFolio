@@ -1,7 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import Hero from './components/Hero';
-import HeroImage from './components/HeroImage'; // Import the new HeroImage component
+import HeroImage from './components/HeroImage';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
