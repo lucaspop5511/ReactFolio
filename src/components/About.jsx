@@ -6,10 +6,14 @@ function About() {
     return (
         <section className='about'>
             <p>
-                Hi! I'm Lucas, a web designer and student passionate about building interactive and
-                visually engaging web experiences. I’m currently based in Romania and continuously
-                learning new web technologies.
+                I'm Lucas, a web designer and a final year student at <a>UBB FSEGA</a>. 
+                I enjoy creating unique web interfaces, I like the way solving a problem feels and 
+                I'm also a friendly guy with too much creativity.
             </p>
+            <i>
+                Currently learning React, 
+                and experimenting with visual Javascript Libraries.
+            </i>
         </section>
     );
 }

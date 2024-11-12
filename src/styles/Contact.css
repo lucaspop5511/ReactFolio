@@ -2,10 +2,6 @@
     padding: 0 2rem;
 }
 
-.email-section, .contact-container p {
-    margin-left: 2rem;
-}
-
 /* Underline Effect */
 .contact-container h2 {
     position: relative;
