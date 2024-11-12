@@ -20,6 +20,7 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
+    font-size: 1.75rem;
 }
 .projects-container h2::after {
     content: '';

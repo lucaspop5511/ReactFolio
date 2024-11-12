@@ -1,8 +1,12 @@
+h1 {
+    font-size: 2rem;
+}
+
 .hero-container h1 i {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    margin-bottom: -7px;
+    margin-bottom: -10px;
 }
 
 /* Underline effect for the i tag */
