@@ -49,7 +49,7 @@ function Contact() {
                    <i className="fa-brands fa-telegram"></i> Telegram
                 </a>
 
-                <a href="public/PopLucas_CV.pdf" 
+                <a href="/PopLucas_CV.pdf" 
                    target="_blank" 
                    rel="noopener noreferrer">
                    <i className="fa-solid fa-file-lines"></i> View Resume

@@ -9,3 +9,8 @@
 .about i {
     font-size: smaller;
 }
+
+.about a {
+    text-decoration-color: #4d7292;
+    color: #4d7292;
+}

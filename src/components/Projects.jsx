@@ -13,6 +13,7 @@ function Projects() {
             tags: ['HTML', 'CSS'],
             description: 'Landing page for a romanian eco company. Currently working on in!',
             video: '/VideoPreviews/EEG.mov',
+            link: 'https://eegro.vercel.app/#'
         },
         {
             title: 'Honey Tunes',
@@ -20,6 +21,7 @@ function Projects() {
             tags: ['HTML', 'CSS', 'Javascript'],
             description: 'Ear training app, that tests your ability to recognize notes and chords only by hearing them',
             video: '/VideoPreviews/HoneyTunes.mov',
+            link: 'https://honey-tunes.vercel.app/'
         },
         {
             title: 'My older Portfolio Page',
@@ -27,6 +29,7 @@ function Projects() {
             tags: ['HTML', 'CSS', 'Javascript', 'p5.js'],
             description: 'Personal single page webapp with more information about me, and also a cool minigame. This is the first big project that I made.',
             video: '/VideoPreviews/OldWebsite.mov',
+            link: 'https://lucaspop51.vercel.app/'
         },
         {
             title: 'Task Manager',
@@ -34,6 +37,7 @@ function Projects() {
             tags: ['HTML', 'CSS', 'Javascript'],
             description: 'Simple task manager as a project for my school',
             video: '/VideoPreviews/TaskManager.mov',
+            link: 'https://task-manager-lucaspop.vercel.app/'
         },
         {
             title: 'Responsive Digital Clock',
@@ -41,6 +45,7 @@ function Projects() {
             tags: ['HTML', 'CSS', 'Javascript'],
             description: 'Telling time in style. This is just me playing with CSS and smooth responsiveness',
             video: '/VideoPreviews/DigitalClock.mov',
+            link: 'https://responsive-digital-clock.vercel.app/'
         },
     ];
 
@@ -55,6 +60,10 @@ function Projects() {
 
     const handleMouseMove = (event) => {
         setMousePosition({ x: event.clientX, y: event.clientY });
+    };
+
+    const handleClick = (link) => {
+        window.open(link, '_blank'); // Open the project link in a new tab
     };
 
     useEffect(() => {
@@ -74,6 +83,8 @@ function Projects() {
                     onMouseEnter={(event) => handleMouseEnter(project, event)}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick(project.link)} // Open link on click
+                    style={{ cursor: 'pointer' }}
                 >
                     <h3>{project.title} | <i>{project.date}</i></h3>
                     <p>{project.description}</p>
