@@ -23,19 +23,16 @@
 
 .hover-text {
     position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: rgb(19, 19, 19);
-    font-size: .75rem;
+    font-size: 0.75rem;
     background-color: rgba(106, 140, 145, 0.31);
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    transition-delay: .1s;
-    text-align: center;
+    transform: translate(1%, -10%);
+    pointer-events: none; /* Prevent text from interfering with mouse events */
+    opacity: 1;
 }
+
 
 /* Show the text on hover */
 .p5-sketch:hover .hover-text {

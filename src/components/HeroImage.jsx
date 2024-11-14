@@ -1,16 +1,16 @@
-// src/components/HeroImage.jsx
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import p5 from 'p5';
 import '/src/styles/HeroImage.css';
 
 function HeroImage() {
     const sketchRef = useRef();
     const p5Instance = useRef(null);
+    const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
+    const [isHovering, setIsHovering] = useState(false);
 
-    // Function to initialize and refresh the p5 sketch
     const initializeSketch = () => {
         if (p5Instance.current) {
-            p5Instance.current.remove(); // Remove the existing sketch to prevent stacking
+            p5Instance.current.remove();
         }
 
         p5Instance.current = new p5((p) => {
@@ -19,32 +19,26 @@ function HeroImage() {
             const cubes = [];
 
             function generateCubes() {
-                cubes.length = 0; // Clear existing cubes
-                cubes.push(new Cube(0, 0, 0)); // Add the first cube at the center
+                cubes.length = 0;
+                cubes.push(new Cube(0, 0, 0));
 
                 while (cubes.length < 50) {
                     addRandomCube();
                 }
 
-                cubes.sort((a, b) => {
-                    return a.getSortString().localeCompare(b.getSortString());
-                });
-
+                cubes.sort((a, b) => a.getSortString().localeCompare(b.getSortString()));
                 centerShape();
             }
 
             function centerShape() {
-                // Calculate boundary limits of the cubes
                 const minX = Math.min(...cubes.map(cube => cube.getProjectedX()));
                 const maxX = Math.max(...cubes.map(cube => cube.getProjectedX()));
                 const minY = Math.min(...cubes.map(cube => cube.getProjectedY()));
                 const maxY = Math.max(...cubes.map(cube => cube.getProjectedY()));
 
-                // Calculate offset to center the shape
                 const offsetX = gridTopX - (minX + maxX) / 2;
                 const offsetY = gridTopY - (minY + maxY) / 2;
 
-                // Apply offset to each cube's projected position
                 cubes.forEach(cube => cube.applyOffset(offsetX, offsetY));
             }
 
@@ -55,8 +49,6 @@ function HeroImage() {
                 p.strokeWeight(2);
 
                 generateCubes();
-
-                // Attach click event to refresh the sketch when clicking the canvas
                 canvas.mouseClicked(() => initializeSketch());
             };
 
@@ -73,7 +65,6 @@ function HeroImage() {
 
                 while (!cubeAdded) {
                     const randomCube = p.random(cubes);
-
                     let newCubeC = randomCube.c;
                     let newCubeR = randomCube.r;
                     let newCubeZ = randomCube.z;
@@ -172,13 +163,39 @@ function HeroImage() {
     useEffect(() => {
         initializeSketch();
         return () => {
-            if (p5Instance.current) p5Instance.current.remove(); // Cleanup on unmount
+            if (p5Instance.current) p5Instance.current.remove();
         };
     }, []);
 
-    return <div ref={sketchRef} className="p5-sketch">
-        <div className="hover-text"><b>Made with p5.js</b> - click to regenerate</div>
-    </div>;
+    const handleMouseMove = (e) => {
+        setHoverPosition({ x: e.clientX, y: e.clientY });
+        setIsHovering(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovering(false);
+    };
+
+    return (
+        <div
+            ref={sketchRef}
+            className="p5-sketch"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+        >
+            {isHovering && (
+                <div
+                    className="hover-text"
+                    style={{
+                        top: hoverPosition.y,
+                        left: hoverPosition.x,
+                    }}
+                >
+                    <b>Made with p5.js</b> - click to regenerate
+                </div>
+            )}
+        </div>
+    );
 }
 
 export default HeroImage;
