@@ -75,6 +75,11 @@
     margin: 2.5rem 0 1rem 0;
 }
 
+/* Contact Links Text */
+.contact-links b {
+    font-weight: 300;
+}
+
 .contact-links a {
     color: #333;
     font-size: 1rem;

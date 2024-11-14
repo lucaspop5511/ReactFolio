@@ -10,7 +10,7 @@ function About() {
                 I enjoy creating unique web interfaces, I like the way solving a problem feels and 
                 I'm also a friendly guy with too much creativity.
             </p>
-            <i>
+            <i className='learning'>
                 Currently learning React, 
                 and experimenting with visual Javascript Libraries.
             </i>

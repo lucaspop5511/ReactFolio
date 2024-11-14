@@ -38,8 +38,66 @@ p {
     box-shadow: 0 0 250px 190px var(--background-color);
 }
 
+/* Mobile Styles */
 @media (max-width: 600px) {
+    /* Adjust padding and text alignment for mobile */
     .app {
-        padding: 5vw;
+        box-shadow: none;
     }
+
+    body {
+        overflow-x: scroll;
+    }
+
+    .about, .projects-container, .contact-container {
+        transform: translateX(40px);
+    }
+
+    .about {
+        margin-right: 4rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+        padding-right: 4rem;
+    }
+
+    /* Stack project information for better readability */
+    .project h3, .project p, .tags {
+        padding-right: 4rem;
+    }
+
+    .project:hover {
+        box-shadow: none;
+    }
+
+    .project-preview {
+        display: none;
+    }
+
+    .contact-links b {
+        display: none;
+    }
+
+    .contact-links i {
+        font-size: 1.6rem;
+    }
+
+    /* Reduce font sizes for better readability */
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p, .tag {
+        font-size: 0.75rem;
+    }
+
 }

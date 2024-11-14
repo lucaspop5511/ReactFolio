@@ -59,11 +59,32 @@ function Projects() {
     };
 
     const handleMouseMove = (event) => {
-        setMousePosition({ x: event.clientX, y: event.clientY });
+        updateMousePosition(event);
     };
 
     const handleClick = (link) => {
         window.open(link, '_blank'); // Open the project link in a new tab
+    };
+
+    const updateMousePosition = (event) => {
+        const previewWidth = 500; // Max width of the preview (clamped in CSS)
+        const previewHeight = (previewWidth / 298) * 184; // Maintain aspect ratio
+        const padding = 15; // Padding to prevent edge overflow
+        const { clientX, clientY } = event;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Calculate x position (ensuring the preview doesn’t go out of viewport)
+        const x = clientX + previewWidth + padding > viewportWidth
+            ? viewportWidth - previewWidth - padding
+            : clientX + padding;
+
+        // Calculate y position similarly
+        const y = clientY + previewHeight + padding > viewportHeight
+            ? viewportHeight - previewHeight - padding
+            : clientY - 5;
+
+        setMousePosition({ x, y });
     };
 
     useEffect(() => {
@@ -83,7 +104,7 @@ function Projects() {
                     onMouseEnter={(event) => handleMouseEnter(project, event)}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
-                    onClick={() => handleClick(project.link)} // Open link on click
+                    onClick={() => handleClick(project.link)}
                     style={{ cursor: 'pointer' }}
                 >
                     <h3>{project.title} | <i>{project.date}</i></h3>
@@ -101,12 +122,12 @@ function Projects() {
                 <div
                     className="project-preview"
                     style={{
-                        top: mousePosition.y - 5,
-                        left: mousePosition.x + 15,
+                        top: mousePosition.y,
+                        left: mousePosition.x,
                     }}
                 >
                     <video
-                        ref={videoRef} // Attach the ref to the video element
+                        ref={videoRef}
                         src={hoveredProject.video}
                         width="2980"
                         height="1844"
