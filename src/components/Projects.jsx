@@ -40,6 +40,13 @@ function Projects() {
             link: 'https://task-manager-lucaspop.vercel.app/'
         },
         {
+            title: 'Sofi\'s Recipes',
+            date: 'April 2024',
+            tags: ['Wordpress', 'HTML', 'PHP', 'Javascript', 'CSS'],
+            description: 'A website about my favourite recipes in Wordpress, as a part of Azimut Vision Web-Design Course',
+            video: '/VideoPreviews/sofi\'sRecipes.mov'
+        },
+        {
             title: 'Responsive Digital Clock',
             date: 'April 2024',
             tags: ['HTML', 'CSS', 'Javascript'],
