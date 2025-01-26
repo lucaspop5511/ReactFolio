@@ -8,8 +8,16 @@ function Projects() {
 
     const projects = [
         {
+            title: 'Rock-Paper-Scissors Game',
+            date: 'Janauary 2025',
+            tags: ['Vue.js' ,'HTML', 'CSS'],
+            description: 'The famous rock-paper-scissors game redesigned in my own style. Made this to learn Vue.',
+            video: '/VideoPreviews/RPS.mov',
+            link: 'https://eegro.vercel.app/#'
+        },
+        {
             title: 'Eco Engineering Group',
-            date: 'Work in progress',
+            date: 'October 2024',
             tags: ['HTML', 'CSS'],
             description: 'Landing page for a romanian eco company. Currently working on it!',
             video: '/VideoPreviews/EEG.mov',
