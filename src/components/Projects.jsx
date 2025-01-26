@@ -11,7 +11,7 @@ function Projects() {
             title: 'Eco Engineering Group',
             date: 'Work in progress',
             tags: ['HTML', 'CSS'],
-            description: 'Landing page for a romanian eco company. Currently working on in!',
+            description: 'Landing page for a romanian eco company. Currently working on it!',
             video: '/VideoPreviews/EEG.mov',
             link: 'https://eegro.vercel.app/#'
         },
