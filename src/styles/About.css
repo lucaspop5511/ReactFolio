@@ -1,4 +1,13 @@
 .about {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.about a {
+    color: var(--accent-color);
+}
+
+.about {
     margin: 3rem 1rem;
 }
 

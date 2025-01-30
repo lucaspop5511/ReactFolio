@@ -1,3 +1,12 @@
+.hero-container {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.hero-container h1 i {
+    color: var(--text-color);
+}
+
 h1 {
     font-size: 2rem;
 }

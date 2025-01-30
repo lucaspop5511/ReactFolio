@@ -1,5 +1,19 @@
 .contact-container {
-    padding: 0 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.contact-container h2 {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.contact-container i {
+    color: var(--text-color);
+}
+
+.contact-container a {
+    color: var(--text-color);
 }
 
 /* Underline Effect */
@@ -8,7 +22,6 @@
     display: inline-block;
     overflow: hidden;
     font-size: 1.75rem;
-    color: #333;
 }
 .contact-container h2::after {
     content: '';
@@ -44,7 +57,6 @@
 
 .email {
     font-weight: bold;
-    
 }
 
 .copy-button {
@@ -67,7 +79,6 @@
     margin-right: 5px;
 }
 
-
 /* Contact Links */
 .contact-links {
     display: flex;
@@ -81,7 +92,6 @@
 }
 
 .contact-links a {
-    color: #333;
     font-size: 1rem;
     text-decoration: none;
     display: flex;
@@ -92,8 +102,4 @@
 
 .contact-links a:hover {
     color: #4d7292;
-}
-
-.contact-links i {
-    font-size: 1.2rem;
 }

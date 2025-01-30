@@ -13,7 +13,7 @@ function Projects() {
             tags: ['Vue.js' ,'HTML', 'CSS'],
             description: 'The famous rock-paper-scissors game redesigned in my own style. Made this to learn Vue.',
             video: '/VideoPreviews/RPS.mov',
-            link: 'https://eegro.vercel.app/#'
+            link: 'https://github.com/lucaspop5511/RPSWar'
         },
         {
             title: 'Eco Engineering Group',
@@ -104,7 +104,7 @@ function Projects() {
 
     useEffect(() => {
         if (videoRef.current && hoveredProject) {
-            videoRef.current.playbackRate = 1.5; // Set the playback rate when the video is hovered
+            videoRef.current.playbackRate = 2.5; // Set the playback rate when the video is hovered
         }
     }, [hoveredProject]); // Only run when hoveredProject changes
 
