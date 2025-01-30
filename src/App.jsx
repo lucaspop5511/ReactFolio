@@ -5,7 +5,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import './styles/main.css';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className='app'>
       <button onClick={toggleTheme} className="theme-toggle">
-        {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+        <i className={`fa-solid ${theme === 'light' ? 'fa-sun sun' : 'fa-moon moon'}`}></i>
       </button>
       <div className='main'>
         <Hero />
