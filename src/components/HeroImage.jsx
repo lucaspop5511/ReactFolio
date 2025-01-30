@@ -7,6 +7,12 @@ function HeroImage() {
     const p5Instance = useRef(null);
     const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Get theme from localStorage
+
+    // Function to detect and apply the correct background color based on the theme
+    const getBackgroundColor = () => {
+        return getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim(); // Fetch current CSS variable
+    };
 
     const initializeSketch = () => {
         if (p5Instance.current) {
@@ -53,7 +59,7 @@ function HeroImage() {
             };
 
             p.draw = () => {
-                p.background(206, 214, 217);
+                p.background(getBackgroundColor());
 
                 for (const cube of cubes) {
                     cube.draw();
