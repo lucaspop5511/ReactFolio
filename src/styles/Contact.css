@@ -21,7 +21,7 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
 }
 .contact-container h2::after {
     content: '';
@@ -38,6 +38,10 @@
 }
 .contact-container:hover h2::after {
     transform: scaleX(1);
+}
+
+.contact-container p {
+    font-size: 1.1rem;
 }
 
 /* Email Section */
@@ -92,7 +96,7 @@
 }
 
 .contact-links a {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-decoration: none;
     display: flex;
     align-items: center;
