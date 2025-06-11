@@ -37,6 +37,10 @@
     color: rgb(162, 162, 162); /* Change to an accent color when hovering */
 }
 
+.project p {
+    font-size: clamp(0.75rem, 1.25vw, 2rem);
+}
+
 .projects-container h2 {
     color: var(--text-color);
 }

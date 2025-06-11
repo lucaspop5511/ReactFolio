@@ -4,6 +4,11 @@
     background-color: rgba(106, 140, 145, 0.31);
 }
 
+[data-theme="dark"] .hover-text {
+    color: white;
+    background-color: rgba(106, 140, 145, 0.31);
+}
+
 .hero-image-container {
     position: relative;
     display: flex;

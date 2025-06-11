@@ -16,14 +16,6 @@ function Projects() {
             link: 'https://github.com/lucaspop5511/RPSWar'
         },
         {
-            title: 'Eco Engineering Group',
-            date: 'October 2024',
-            tags: ['HTML', 'CSS'],
-            description: 'Landing page for a romanian eco company. Currently working on it!',
-            video: '/VideoPreviews/EEG.mov',
-            link: 'https://eegro.vercel.app/#'
-        },
-        {
             title: 'Honey Tunes',
             date: 'July 2024',
             tags: ['HTML', 'CSS', 'Javascript'],
