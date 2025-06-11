@@ -71,6 +71,7 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 5px;
+    z-index: 9999;
 }
 
 .theme-toggle::after {
@@ -184,6 +185,35 @@ p {
 
     p, .tag {
         font-size: 0.75rem;
+    }
+
+    .theme-toggle {
+        width: 60px;
+        height: 30px;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    
+    .theme-toggle::after {
+        width: 26px;
+        height: 26px;
+        left: 3px;
+    }
+    
+    .theme-toggle i {
+        font-size: 1rem;
+    }
+    
+    .theme-toggle .sun {
+        right: 6px;
+    }
+    
+    .theme-toggle .moon {
+        left: 6px;
+    }
+    
+    [data-theme="dark"] .theme-toggle::after {
+        left: calc(100% - 29px);
     }
 
 }
