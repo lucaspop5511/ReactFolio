@@ -92,11 +92,50 @@
 }
 
 .tag {
-    background-color: #4d7292;
     padding: 0.3rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.7rem;
-    color: rgb(216, 221, 217);
+    font-size: clamp(0.5rem, 1vw, 0.75rem);
+    opacity: 0.9;
+}
+
+.tag-react {
+    background-color: #3dbede;
+    color: #e3f3f6;
+}
+
+.tag-vue {
+    background-color: #41B883;
+    color: #c6f0dd;
+}
+
+.tag-html {
+    background-color: #e34c26;
+    color: #fec8ba;
+}
+
+.tag-css {
+    background-color: rebeccapurple;
+    color: rgb(225, 196, 255);
+}
+
+.tag-js {
+    background-color: #f8e14b;
+    color: #7b6b03;
+}
+
+.tag-pfive {
+    background-color: rgb(218, 57, 96);
+    color: rgb(255, 200, 214);
+}
+
+.tag-wp {
+    background-color: #21759b;
+    color: #ccecfb;
+}
+
+.tag-php {
+    background-color: #8993be;
+    color: #d4dcfe;
 }
 
 /* Project Video Preview */

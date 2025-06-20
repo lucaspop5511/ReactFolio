@@ -8,9 +8,16 @@ function Projects() {
 
     const projects = [
         {
+            title: 'Guest List Sorting',
+            date: 'June 2025',
+            tags: ['HTML', 'CSS', 'React'],
+            description: 'React app for sorting, filtering and combining multiple Google Sheets. A better option for viewing my wedding guests.',
+            video: '/VideoPreviews/NuntaAnului.mov',
+        },
+        {
             title: 'Rock-Paper-Scissors Game',
             date: 'Janauary 2025',
-            tags: ['Vue.js' ,'HTML', 'CSS'],
+            tags: ['HTML', 'CSS', 'Vue.js'],
             description: 'The famous rock-paper-scissors game redesigned in my own style. Made this to learn Vue.',
             video: '/VideoPreviews/RPS.mov',
             link: 'https://github.com/lucaspop5511/RPSWar'
@@ -19,7 +26,7 @@ function Projects() {
             title: 'Honey Tunes',
             date: 'July 2024',
             tags: ['HTML', 'CSS', 'Javascript'],
-            description: 'Ear training app, that tests your ability to recognize notes and chords only by hearing them',
+            description: 'Ear training app, that tests your ability to recognize notes and chords only by hearing them.',
             video: '/VideoPreviews/HoneyTunes.mov',
             link: 'https://honey-tunes.vercel.app/'
         },
@@ -35,22 +42,22 @@ function Projects() {
             title: 'Task Manager',
             date: 'May 2024',
             tags: ['HTML', 'CSS', 'Javascript'],
-            description: 'Simple task manager as a project for my school',
+            description: 'Simple task manager as a school project.',
             video: '/VideoPreviews/TaskManager.mov',
             link: 'https://task-manager-lucaspop.vercel.app/'
         },
         {
             title: 'Sofi\'s Recipes',
             date: 'April 2024',
-            tags: ['Wordpress', 'HTML', 'PHP', 'Javascript', 'CSS'],
-            description: 'A website about my favourite recipes in Wordpress, as a part of Azimut Vision Web-Design Course',
+            tags: ['HTML', 'CSS', 'Javascript', 'Wordpress', 'PHP'],
+            description: 'A website about my favourite recipes in Wordpress, as a part of Azimut Vision Web-Design Course.',
             video: '/VideoPreviews/sofi\'sRecipes.mov'
         },
         {
             title: 'Responsive Digital Clock',
             date: 'April 2024',
             tags: ['HTML', 'CSS', 'Javascript'],
-            description: 'Telling time in style. This is just me playing with CSS and smooth responsiveness',
+            description: 'Telling time in style. This is just me playing with CSS and smooth responsiveness.',
             video: '/VideoPreviews/DigitalClock.mov',
             link: 'https://responsive-digital-clock.vercel.app/'
         },
@@ -94,6 +101,21 @@ function Projects() {
         setMousePosition({ x, y });
     };
 
+    const getTagCategory = (tag) => {
+    const categories = {
+        'React': 'react',
+        'Vue.js': 'vue',
+        'p5.js': 'pfive',
+        'HTML': 'html',
+        'CSS': 'css',
+        'Javascript': 'js',
+        'PHP': 'php',
+        'Wordpress': 'wp',
+    };
+    
+    return categories[tag] || 'other'; // Default to 'other' if not found
+};
+
     useEffect(() => {
         if (videoRef.current && hoveredProject) {
             videoRef.current.playbackRate = 2.5; // Set the playback rate when the video is hovered
@@ -118,7 +140,7 @@ function Projects() {
                     <p>{project.description}</p>
                     <div className="tags">
                         {project.tags.map((tag, i) => (
-                            <span className="tag" key={i}>
+                            <span className={`tag tag-${getTagCategory(tag)}`} key={i}>
                                 {tag}
                             </span>
                         ))}
