@@ -13,6 +13,7 @@ function Projects() {
             tags: ['HTML', 'CSS', 'React', 'Next.js', 'TMDb API', 'Firebase'],
             description: 'Web application for searching movies and TV shows, creating watchlists, and viewing current cinema releases in Romania.',
             video: '/VideoPreviews/CinemaCloud.mov',
+            link: 'https://cinema-cloud.vercel.app/'
         },
         {
             title: 'Guest List Sorting',
@@ -20,6 +21,7 @@ function Projects() {
             tags: ['HTML', 'CSS', 'React'],
             description: 'React app for sorting, filtering and combining multiple Google Sheets. A better option for viewing my wedding guests.',
             video: '/VideoPreviews/NuntaAnului.mov',
+            link: 'https://github.com/lucaspop5511/NuntaAnului'
         },
         {
             title: 'Rock-Paper-Scissors Game',
