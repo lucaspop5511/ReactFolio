@@ -1,12 +1,12 @@
 /* src/styles/HeroImage.css */
 .hover-text {
     color: var(--text-color);
-    background-color: rgba(106, 140, 145, 0.31);
+    background-color: var(--background-color);
 }
 
 [data-theme="dark"] .hover-text {
     color: white;
-    background-color: rgba(106, 140, 145, 0.31);
+    background-color: var(--background-color);
 }
 
 .hero-image-container {
@@ -35,16 +35,10 @@
     position: absolute;
     color: rgb(19, 19, 19);
     font-size: 0.75rem;
-    background-color: rgba(106, 140, 145, 0.31);
+    background-color: var(--background-color);
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    box-shadow: 5px 5px 15px black;
     transform: translate(1%, -10%);
     pointer-events: none; /* Prevent text from interfering with mouse events */
-    opacity: 1;
-}
-
-
-/* Show the text on hover */
-.p5-sketch:hover .hover-text {
-    opacity: 1;
 }

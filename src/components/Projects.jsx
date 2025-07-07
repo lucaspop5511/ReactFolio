@@ -4,9 +4,16 @@ import '/src/styles/Projects.css';
 function Projects() {
     const [hoveredProject, setHoveredProject] = useState(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const videoRef = useRef(null); // Create a reference to the video element
+    const videoRef = useRef(null);
 
     const projects = [
+        {
+            title: 'Cinema Cloud',
+            date: 'June 2025',
+            tags: ['HTML', 'CSS', 'React', 'Next.js', 'TMDb API', 'Firebase'],
+            description: 'Web application for searching movies and TV shows, creating watchlists, and viewing current cinema releases in Romania.',
+            video: '/VideoPreviews/CinemaCloud.mov',
+        },
         {
             title: 'Guest List Sorting',
             date: 'June 2025',
