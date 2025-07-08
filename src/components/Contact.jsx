@@ -43,12 +43,6 @@ function Contact() {
                    <i className="fa-brands fa-github"></i> <b>Github</b>
                 </a>
 
-                <a href="https://t.me/lukibuki" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
-                   <i className="fa-brands fa-telegram"></i> <b>Telegram</b>
-                </a>
-
                 <a href="/PopLucas_CV.pdf" 
                    target="_blank" 
                    rel="noopener noreferrer">

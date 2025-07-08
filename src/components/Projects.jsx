@@ -10,7 +10,7 @@ function Projects() {
         {
             title: 'Cinema Cloud',
             date: 'June 2025',
-            tags: ['HTML', 'CSS', 'React', 'Next.js', 'TMDb API', 'Firebase'],
+            tags: ['HTML', 'CSS', 'React', 'Next.js', 'API', 'Firebase'],
             description: 'Web application for searching movies and TV shows, creating watchlists, and viewing current cinema releases in Romania.',
             video: '/VideoPreviews/CinemaCloud.mov',
             link: 'https://cinema-cloud.vercel.app/'
